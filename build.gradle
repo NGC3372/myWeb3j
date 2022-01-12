@@ -18,6 +18,7 @@ dependencies {
 
     implementation('org.slf4j:slf4j-simple:1.7.32')
     implementation ('org.web3j:core:5.0.0')
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
 }
 
 test {
