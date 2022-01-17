@@ -6,7 +6,8 @@ import java.math.BigInteger
 
 
 fun main() {
-    deployStorage(deployRegister())
+    //deployRegister()
+    deployStorage("0x46ac89282c836190913195c6590814d38624ddbd")
 }
 
 

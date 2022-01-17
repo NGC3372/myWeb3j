@@ -3,9 +3,10 @@ import org.web3j.tx.gas.StaticGasProvider
 import java.math.BigInteger
 
 fun main() {
-    registerContract.register()
-    registerContract.isRegisteted()
-    storageContract.addData("dgdgsdkl;kl;gds")
+   // registerContract.register()
+
+   // registerContract.isRegisteted()
+//    storageContract.addData("2020-10-1#123131")
     storageContract.getData()
 }
 
@@ -13,7 +14,7 @@ object registerContract{
     val web3 = myWeb3.localWeb3
     val account = myWeb3.localAccount
     val provider: ContractGasProvider = StaticGasProvider(BigInteger("100000"), BigInteger("200000"))
-    private val address = "0x8e75a501e6c9d9dd375bfe3b466eb36bd04cc0f6"
+    private val address = "0x46ac89282c836190913195c6590814d38624ddbd"
     private val  contract = Fengwen_sol_registerContract.load(address, web3, account, provider)
 
     fun register(){
@@ -21,6 +22,7 @@ object registerContract{
     }
 
     fun isRegisteted(){
+        println(account.address)
         println(contract.isRegisted(account.address).send())
     }
 
@@ -30,7 +32,7 @@ object storageContract{
     val web3 = myWeb3.localWeb3
     val account = myWeb3.localAccount
     val provider: ContractGasProvider = StaticGasProvider(BigInteger("100000"), BigInteger("200000"))
-    private val address = "0x8536488307b2bf1a81b5cdbdf157bfd0bfe592b1"
+    private val address = "0x39fbd48274b1350e08f7685d8ad6d8bc50a51a64"
     private val  contract = Fengwen_sol_storageContract.load(address, web3, account, provider)
 
     fun addData(str :String) {
@@ -42,6 +44,5 @@ object storageContract{
         val list = contract.getlist().send()
         println(list)
     }
-
 
 }
